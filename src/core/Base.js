@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 const Base = ({
     title = "My title",
     description = "My description",
-    className = "bg-dark text-white p-4",
+    className = "bg-dark text-white",
     children 
 }) => {
   return (

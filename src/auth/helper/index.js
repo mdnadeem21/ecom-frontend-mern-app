@@ -5,7 +5,7 @@ export const signup = user =>{
     console.log("User : ",user.name.length);
     return fetch(`${API}/signup`,{ 
         method : "POST",
-        header: {
+        headers: {
             Accept : "application/json",
             "Content-Type" : "application/json"
         },
@@ -19,7 +19,7 @@ export const signup = user =>{
 export const signin = user =>{
     return fetch(`${API}/signin`,{ 
         method : "POST",
-        header: {
+        headers: {
             Accept : "application/json",
             "Content-Type" : "application/json"
         },
