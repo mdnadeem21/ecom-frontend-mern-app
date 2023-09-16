@@ -42,15 +42,15 @@ const Signin = () =>{
     const performRedirect = () =>{
         if(didRedirect){
             if (user && user.role === 1) {
-                 return <p>redirct to admin</p>
+                 return <Redirect to="/admin/dashboard" />
             } else {
-                return <p>redirct to dasboard</p>
+                return <Redirect to="/user/dashboard" />
             }
 
         }
-        // if(isAuthenticate()){
-        //    return <Redirect to="/"/>
-        // }
+         if(isAuthenticate()){
+            return <Redirect to="/"/>
+         }
     }
     const loadingMessage = () =>{
         return (

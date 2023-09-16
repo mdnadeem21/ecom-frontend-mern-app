@@ -28,7 +28,8 @@ const Navbar = ({ history }) => {
             Cart
           </Link>
         </li>
-        <li className="nav-item">
+        { isAuthenticate() && isAuthenticate().user.role === 0 && (
+          <li className="nav-item">
           <Link
             style={currentTab(history, "/user/dasboard")}
             className="nav-link"
@@ -37,7 +38,9 @@ const Navbar = ({ history }) => {
             Dashboard
           </Link>
         </li>
-        <li className="nav-item">
+        )}
+        {isAuthenticate() && isAuthenticate().user.role === 1 && (
+          <li className="nav-item">
           <Link
             style={currentTab(history, "/admin/dashboard")}
             className="nav-link"
@@ -46,6 +49,7 @@ const Navbar = ({ history }) => {
             Admin Dashboard
           </Link>
         </li>
+        )}
         {!isAuthenticate() && (
           <Fragment>
             <li className="nav-item">
